@@ -32,4 +32,18 @@ public class Solution0017 {
         }
         return;
     }
+
+    // 采用StringBuilder类型处理，提高程序运行效率
+    private void findCombination(String digits, int index, StringBuilder sb) {
+        if (index == digits.length()) {
+            result.add(sb.toString());
+            return;
+        }
+        char c = digits.charAt(index);
+        String letters = letterMap[c - '0'];
+        for (int i = 0; i < letters.length(); i++) {
+            findCombination(digits, index + 1, sb.append(letters.charAt(i)));
+            sb.deleteCharAt(sb.length()-1);
+        }
+    }
 }
