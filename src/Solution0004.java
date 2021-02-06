@@ -5,8 +5,6 @@
 public class Solution0004 {
 
     /* 0004 Median of Two Sorted Arrays */
-
-    // 时间复杂度：O(m + n)
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
         int m = nums1.length;
         int n = nums2.length;
@@ -25,4 +23,10 @@ public class Solution0004 {
             return (left + right) / 2.0;
         return right;
     }
+
+    /**
+     * 时间复杂度：O(m + n)  空间复杂度：O(1)
+     * Runtime: 2 ms, faster than 99.80% of Java online submissions for Median of Two Sorted Arrays.
+     * Memory Usage: 40.1 MB, less than 73.26% of Java online submissions for Median of Two Sorted Arrays.
+     */
 }
