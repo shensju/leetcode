@@ -4,7 +4,7 @@
  */
 public class Solution0004 {
 
-    /* 0004 Median of Two Sorted Arrays */
+    /** 0004 Median of Two Sorted Arrays **/
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
         int m = nums1.length;
         int n = nums2.length;

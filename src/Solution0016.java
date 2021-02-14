@@ -6,7 +6,7 @@ import java.util.Arrays;
  */
 public class Solution0016 {
 
-    /* 0016 3Sum Closest */
+    /** 0016 3Sum Closest **/
     public static int threeSumClosest(int[] nums, int target) {
         Arrays.sort(nums);
         int result = nums[0] + nums[1] + nums[2];

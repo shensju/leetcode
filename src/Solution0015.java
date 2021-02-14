@@ -6,7 +6,7 @@ import java.util.*;
  */
 public class Solution0015 {
 
-    /* 0015 3Sum */
+    /** 0015 3Sum **/
     public List<List<Integer>> threeSum(int[] nums) {
         int n = nums.length;
         // 对数组进行非递减排序
