@@ -14,6 +14,7 @@ public class Solution0206 {
     }
 
     /** 0206 Reverse Linked List **/
+
     /** 方法一：迭代 **/
     public ListNode reverseList01(ListNode head) {
         ListNode prev = null;
@@ -31,5 +32,22 @@ public class Solution0206 {
      * 时间复杂度：O(n)  空间复杂度：O(1)
      * Runtime: 0 ms, faster than 100.00% of Java online submissions for Reverse Linked List.
      * Memory Usage: 38.8 MB, less than 53.54% of Java online submissions for Reverse Linked List.
+     */
+
+    /** 方法二：递归 **/
+    public ListNode reverseList02(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        ListNode p = reverseList02(head.next);
+        head.next.next = head;
+        head.next = null;
+        return p;
+    }
+
+    /**
+     * 时间复杂度：O(n)  空间复杂度：O(n)
+     * Runtime: 0 ms, faster than 100.00% of Java online submissions for Reverse Linked List.
+     * Memory Usage: 39.2 MB, less than 25.55% of Java online submissions for Reverse Linked List.
      */
 }
