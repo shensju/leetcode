@@ -15,37 +15,31 @@ public class Solution0061 {
 
     /** 0061 Rotate List **/
     public ListNode rotateRight(ListNode head, int k) {
-        if(head == null || k == 0) return head;
-        ListNode dummyNode = new ListNode(-1, head);
-        ListNode prev = dummyNode;
-        int count = 0;
-        while(prev.next != null) {
-            prev = prev.next;
-            count++;
+        // 链表为空，或链表只有一个节点
+        if (head == null) return null;
+        if (head.next == null) return head;
+        // 将链表闭合成环，同时计算出链表的长度n
+        ListNode old_tail = head;
+        int n;
+        for (n = 1; old_tail.next != null; n++) {
+            old_tail = old_tail.next;
         }
-        // 实际将链表每个节点向右移动的位置
-        k = k % count;
-        if(k == 0) return head;
-        prev = dummyNode;
-        for(int i = 0; i < count - k; i++) {
-            prev = prev.next;
+        old_tail.next = head;
+        // 新的链表尾，是第 n - k % n - 1 个节点
+        // 新的链表头，是第 n - k % n 个节点
+        ListNode new_tail = head;
+        for (int i = 0; i < n - k % n - 1; i++) {
+            new_tail =  new_tail.next;
         }
-        ListNode curr = prev.next;
-        prev.next = null;
-
-        ListNode temp = dummyNode.next;
-        dummyNode.next = curr;
-
-        for(int i = 0; i < k - 1; i++) {
-            curr = curr.next;
-        }
-        curr.next = temp;
-        return dummyNode.next;
+        ListNode new_head = new_tail.next;
+        // 断开环，返回新的链表头
+        new_tail.next = null;
+        return new_head;
     }
 
     /**
      * 时间复杂度：O(n)  空间复杂度：O(1)
-     * Runtime: 1 ms, faster than 34.00% of Java online submissions for Rotate List.
-     * Memory Usage: 39.4 MB, less than 17.46% of Java online submissions for Rotate List.
+     * Runtime: 0 ms, faster than 100.00% of Java online submissions for Rotate List.
+     * Memory Usage: 38.4 MB, less than 52.28% of Java online submissions for Rotate List.
      */
 }
