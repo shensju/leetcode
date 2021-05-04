@@ -21,8 +21,8 @@ public class Solution0050 {
 
     /**
      * 时间复杂度：O(logn)  空间复杂度：O(logn)
-     * Runtime: 1 ms, faster than 98.86% of Java online submissions for Divide Two Integers.
-     * Memory Usage: 37.9 MB, less than 27.13% of Java online submissions for Divide Two Integers.
+     * Runtime: 1 ms, faster than 98.86% of Java online submissions for Pow(x, n).
+     * Memory Usage: 37.9 MB, less than 27.13% of Java online submissions Pow(x, n).
      */
 
     /** 方法二：迭代 **/
@@ -46,7 +46,7 @@ public class Solution0050 {
 
     /**
      * 时间复杂度：O(logn)  空间复杂度：O(1)
-     * Runtime: 1 ms, faster than 98.85% of Java online submissions for Divide Two Integers.
-     * Memory Usage: 36.7 MB, less than 83.87% of Java online submissions for Divide Two Integers.
+     * Runtime: 1 ms, faster than 98.85% of Java online submissions for Pow(x, n).
+     * Memory Usage: 36.7 MB, less than 83.87% of Java online submissions for Pow(x, n).
      */
 }
