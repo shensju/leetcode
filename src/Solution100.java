@@ -84,7 +84,7 @@ public class Solution100 {
      */
 
     /**
-     * 深度优先搜索
+     * 方法二：深度优先搜索
      * @param p
      * @param q
      * @return
