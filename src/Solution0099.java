@@ -92,4 +92,55 @@ public class Solution0099 {
             recover(root.right, count, x, y);
         }
     }
+
+    /**
+     * 方法二
+     * @param root
+     */
+    public void recoverTree2(TreeNode root) {
+        TreeNode x = null, y = null, pred = null, predcessor = null;
+        while (root != null) {
+            if (root.left != null) {
+                // predcessor结点是root结点的左子树上的最右侧结点
+                predcessor = root.left;
+                while (predcessor.right != null && predcessor.right != root) {
+                    predcessor = predcessor.right;
+                }
+                // 首次遍历时，如果predcessor结点的右指针为空，则将其指向root结点
+                if (predcessor.right == null) {
+                    predcessor.right = root;
+                    root = root.left;
+                } else {
+                    // 第二次遍历，此时root结点的左子树已经处理完成，需要将predcessor结点的右指针置为空
+                    if (pred != null && pred.val > root.val) {
+                        y = root;
+                        if (x == null) {
+                            x = pred;
+                        }
+                    }
+                    pred = root;
+                    predcessor.right = null;
+                    root = root.right;
+                }
+            } else {
+                // root结点的左子树为空时，直接访问root结点的右子树
+                if (pred != null && pred.val > root.val) {
+                    y = root;
+                    if (x == null) {
+                        x = pred;
+                    }
+                }
+                pred = root;
+                root = root.right;
+            }
+        }
+        int temp = x.val;
+        x.val = y.val;
+        y.val = temp;
+    }
+    /**
+     * 时间复杂度：O(n)  空间复杂度：O(1)
+     * Runtime: 2 ms, faster than 87.03% of Java online submissions for Recover Binary Search Tree.
+     * Memory Usage: 39.6 MB, less than 25.57% of Java online submissions for Recover Binary Search Tree.
+     */
 }
