@@ -1,5 +1,6 @@
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Stack;
 
 /**
  * @Author: shensju
@@ -71,5 +72,41 @@ public class Solution0106 {
      * Memory Usage: 38.9 MB, less than 64.19% of Java online submissions for Construct Binary Tree from Inorder and Postorder Traversal.
      */
 
-
+    /**
+     * 方法二：迭代
+     * @param inorder
+     * @param postorder
+     * @return
+     */
+    public TreeNode buildTree2(int[] inorder, int[] postorder) {
+        if (postorder == null || postorder.length == 0) {
+            return null;
+        }
+        int n = postorder.length;
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode root = new TreeNode(postorder[n - 1]);
+        stack.push(root);
+        int inorderIndex = n - 1;
+        for (int i = n - 2; i >= 0; i--) {
+            TreeNode node = stack.peek();
+            int postorderValue = postorder[i];
+            if (node.val != inorder[inorderIndex]) {
+                node.right = new TreeNode(postorderValue);
+                stack.push(node.right);
+            } else {
+                while (!stack.isEmpty() && stack.peek().val == inorder[inorderIndex]) {
+                    node = stack.pop();
+                    inorderIndex--;
+                }
+                node.left = new TreeNode(postorderValue);
+                stack.push(node.left);
+            }
+        }
+        return root;
+    }
+    /**
+     * 时间复杂度：O(n)  空间复杂度：O(n)
+     * Runtime: 3 ms, faster than 48.81% of Java online submissions for Construct Binary Tree from Inorder and Postorder Traversal.
+     * Memory Usage: 41.3 MB, less than 16.71% of Java online submissions for Construct Binary Tree from Inorder and Postorder Traversal.
+     */
 }
