@@ -36,7 +36,7 @@ public class Solution0116 {
      */
     public Node connect(Node root) {
         if (root == null) {
-            return null;
+            return root;
         }
         Queue<Node> queue = new LinkedList<>();
         queue.offer(root);
@@ -66,5 +66,34 @@ public class Solution0116 {
      * 时间复杂度：O(n)  空间复杂度：O(n)
      * Runtime: 1 ms, faster than 55.44% of Java online submissions for Populating Next Right Pointers in Each Node.
      * Memory Usage: 38.6 MB, less than 99.85% of Java online submissions for Populating Next Right Pointers in Each Node.
+     */
+
+    /**
+     * 使用已建立的next指针
+     * @param root
+     * @return
+     */
+    public Node connect2(Node root) {
+        if (root == null) {
+            return root;
+        }
+        Node leftNode = root;
+        while (leftNode.left != null) {
+            Node head = leftNode;
+            while (head != null) {
+                head.left.next = head.right;
+                if (head.next != null) {
+                    head.right.next = head.next.left;
+                }
+                head = head.next;
+            }
+            leftNode = leftNode.left;
+        }
+        return root;
+    }
+    /**
+     * 时间复杂度：O(n)  空间复杂度：O(1)
+     * Runtime: 0 ms, faster than 100.00% of Java online submissions for Populating Next Right Pointers in Each Node.
+     * Memory Usage: 39.1 MB, less than 72.93% of Java online submissions for Populating Next Right Pointers in Each Node.
      */
 }
