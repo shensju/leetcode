@@ -5,7 +5,7 @@ import java.util.Stack;
 /**
  * @Author: shensju
  * @Date: 2021/7/20 23:30
- * 验证二叉搜索树
+ * 0098 验证二叉搜索树
  */
 public class IsValidBST {
 
