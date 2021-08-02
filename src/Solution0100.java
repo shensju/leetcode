@@ -6,7 +6,7 @@ import java.util.Queue;
  * @Date: 2021/6/17 23:32
  * 0100 Same Tree（相同的树）
  */
-public class Solution100 {
+public class Solution0100 {
 
     /** Definition for a binary tree node **/
     public class TreeNode {
