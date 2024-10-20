@@ -1,4 +1,4 @@
-package array;
+package indi.shensju.array;
 
 import java.util.Arrays;
 

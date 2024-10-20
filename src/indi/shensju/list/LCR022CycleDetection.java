@@ -1,4 +1,4 @@
-package list;
+package indi.shensju.list;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -6,9 +6,19 @@ import java.util.Set;
 /**
  * @author shensju
  * @date 2024/4/16 23:01
- * 单向链表的环路检测
+ * LCR 022 CycleDetection 单向链表的环路检测
  */
-public class CycleDetection {
+public class LCR022CycleDetection {
+
+    /** Definition for singly-linked list **/
+    static class ListNode {
+        int val;
+        ListNode next;
+        ListNode() {}
+        ListNode(int val) { this.val = val; }
+        ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+    }
+
     /** 快慢指针，判断是否有环路，时间复杂度 O(n)，空间复杂度 O(1) **/
     public boolean hasCycle(ListNode head) {
         if (head == null || head.next == null) {

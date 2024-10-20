@@ -1,7 +1,10 @@
 # leetcode
 
 ## Array 数组
+- 0015 / LCR 007 3Sum 三数之和
+- 0041 First Missing Positive 缺失的第一个正数
 - 0088 Merge Sorted Array 合并两个有序数组
+- 0169 Majority Element 多数元素
 
 ## List 链表
 ### 单向链表

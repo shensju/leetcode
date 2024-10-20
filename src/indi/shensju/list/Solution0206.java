@@ -1,4 +1,4 @@
-package list;
+package indi.shensju.list;
 
 /**
  * @author shensju
@@ -6,6 +6,16 @@ package list;
  * 0206 Reverse Linked List 反转链表
  */
 public class Solution0206 {
+
+    /** Definition for singly-linked list **/
+    static class ListNode {
+        int val;
+        ListNode next;
+        ListNode() {}
+        ListNode(int val) { this.val = val; }
+        ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+    }
+
     /** 方法一：迭代，时间复杂度 O(n)，空间复杂度 O(1) **/
     public ListNode reverseList01(ListNode head) {
         ListNode prev = null;

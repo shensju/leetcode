@@ -1,12 +1,15 @@
+package indi.shensju.array;
+
 import java.util.*;
 
 /**
  * @Author: shensju
  * @Date: 2021/2/5 23:11
+ * 0015 / LCR 007 3Sum 三数之和
  */
 public class Solution0015 {
 
-    /** 0015 3Sum **/
+    /** 排序 + 双指针，时间复杂度 O(n^2)，空间复杂度 O(1) **/
     public List<List<Integer>> threeSum(int[] nums) {
         int n = nums.length;
         // 对数组进行非递减排序
@@ -46,10 +49,4 @@ public class Solution0015 {
         }
         return result;
     }
-
-    /**
-     * 时间复杂度：O(n^2)  空间复杂度：O(n)，用于数组排序
-     * Runtime: 18 ms, faster than 88.44% of Java online submissions for 3Sum.
-     * Memory Usage: 43.3 MB, less than 51.88% of Java online submissions for 3Sum.
-     */
 }

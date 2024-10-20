@@ -1,4 +1,4 @@
-package list;
+package indi.shensju.list;
 
 import java.util.Stack;
 
@@ -8,6 +8,16 @@ import java.util.Stack;
  * 0019 Remove Nth Node From End of List 删除链表的倒数第 N 个结点
  */
 public class Solution0019 {
+
+    /** Definition for singly-linked list **/
+    static class ListNode {
+        int val;
+        ListNode next;
+        ListNode() {}
+        ListNode(int val) { this.val = val; }
+        ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+    }
+
     /** 方法一：计算链表长度，时间复杂度 O(n)，空间复杂度 O(1) **/
     public ListNode removeNthFromEnd01(ListNode head, int n) {
         int length = getLength(head);
