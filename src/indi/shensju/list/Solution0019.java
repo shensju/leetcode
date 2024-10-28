@@ -4,7 +4,7 @@ import java.util.Stack;
 
 /**
  * @author shensju
- * @date 2021/3/16 23:15
+ * @date 2021/03/16 23:15
  * 0019 Remove Nth Node From End of List 删除链表的倒数第 N 个结点
  */
 public class Solution0019 {

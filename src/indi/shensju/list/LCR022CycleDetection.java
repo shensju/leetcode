@@ -5,8 +5,8 @@ import java.util.Set;
 
 /**
  * @author shensju
- * @date 2024/4/16 23:01
- * LCR 022 CycleDetection 单向链表的环路检测
+ * @date 2024/04/16 23:01
+ * LCR 022 / 0141 / 0142 CycleDetection 单向链表的环路检测
  */
 public class LCR022CycleDetection {
 

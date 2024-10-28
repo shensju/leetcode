@@ -3,11 +3,11 @@ package indi.shensju.array;
 import java.util.*;
 
 /**
- * @Author: shensju
- * @Date: 2021/2/5 23:11
+ * @author shensju
+ * @date 2021/02/05 23:11
  * 0015 / LCR 007 3Sum 三数之和
  */
-public class Solution0015 {
+public class LCR0073Sum {
 
     /** 排序 + 双指针，时间复杂度 O(n^2)，空间复杂度 O(1) **/
     public List<List<Integer>> threeSum(int[] nums) {

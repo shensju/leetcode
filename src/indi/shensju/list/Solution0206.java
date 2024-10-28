@@ -2,7 +2,7 @@ package indi.shensju.list;
 
 /**
  * @author shensju
- * @date 2021/3/17 23:24
+ * @date 2021/03/17 23:24
  * 0206 Reverse Linked List 反转链表
  */
 public class Solution0206 {

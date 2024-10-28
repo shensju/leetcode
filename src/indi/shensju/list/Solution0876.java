@@ -2,7 +2,7 @@ package indi.shensju.list;
 
 /**
  * @author shensju
- * @date 2024/4/14 16:00
+ * @date 2024/04/14 16:00
  * 0876 Middle of the Linked List 链表的中间结点
  */
 public class Solution0876 {
